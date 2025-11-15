@@ -46,8 +46,7 @@ function changeQty(product, change) {
     }
     
     const inputField = document.getElementById(`qty-${product}`);
-    inputField.value = quantities[product];
-    inputField.classList.remove('error');
+    inputField.textContent = quantities[product];
     
     const productCard = document.querySelector(`[data-product="${product}"]`);
     if (quantities[product] > 0) {
@@ -66,10 +65,10 @@ function changeQty(product, change) {
 function validateQtyInput(product) {
     const inputField = document.getElementById(`qty-${product}`);
     const minOrder = minOrders[product];
+    const rawValue = inputField.value;
     
-    // Handle empty input
-    if (inputField.value === '' || inputField.value === null) {
-        inputField.value = 0;
+    // If empty, treat as 0
+    if (rawValue === '') {
         quantities[product] = 0;
         inputField.classList.remove('error');
         inputField.title = '';
@@ -80,22 +79,38 @@ function validateQtyInput(product) {
         return;
     }
     
-    let value = parseInt(inputField.value) || 0;
+    // Remove non-numeric characters
+    let cleanValue = rawValue.replace(/[^0-9]/g, '');
     
-    // Remove negative values
-    if (value < 0) {
-        value = 0;
-        inputField.value = 0;
+    // If cleaning changed the value, update it
+    if (cleanValue !== rawValue) {
+        inputField.value = cleanValue;
     }
     
-    // Check if value is between 1 and minimum (invalid range)
+    // If empty after cleaning, treat as 0
+    if (cleanValue === '') {
+        quantities[product] = 0;
+        inputField.classList.remove('error');
+        inputField.title = '';
+        
+        const productCard = document.querySelector(`[data-product="${product}"]`);
+        productCard.classList.remove('selected');
+        updateSummary();
+        return;
+    }
+    
+    let value = parseInt(cleanValue);
+    
+    // Update quantity
+    quantities[product] = value;
+    
+    // Check validation
     if (value > 0 && value < minOrder) {
         inputField.classList.add('error');
         inputField.title = `Minimum order is ${minOrder} units`;
     } else {
         inputField.classList.remove('error');
         inputField.title = '';
-        quantities[product] = value;
     }
     
     const productCard = document.querySelector(`[data-product="${product}"]`);

@@ -116,6 +116,46 @@ h1 {
     box-shadow: 0 5px 20px rgba(139, 115, 85, 0.2);
 }
 
+.product.out-of-stock {
+    opacity: 0.6;
+    background: linear-gradient(135deg, #F5F5F5 0%, #E8E8E8 100%) !important;
+    border-color: #D0D0D0 !important;
+    position: relative;
+}
+
+.product.out-of-stock::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    pointer-events: none;
+}
+
+.product.out-of-stock:hover {
+    transform: none;
+    box-shadow: 0 5px 20px rgba(139, 115, 85, 0.1);
+}
+
+.out-of-stock-badge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #dc3545;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    font-weight: bold;
+    z-index: 10;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+}
+
 .product.selected {
     border-color: #8B7355;
     background: linear-gradient(135deg, #F0F8F0 0%, #E8F5E8 100%);

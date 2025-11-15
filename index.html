@@ -45,26 +45,27 @@
             
             <div class="product-grid">
                 <!-- 6 Pcs Pack -->
-                <div class="product" data-product="six" data-price="15" data-min="10">
+                <div class="product out-of-stock" data-product="six" data-price="15" data-min="10" data-available="false">
                     <div class="min-order-badge">Min: 10</div>
-                    <img src="https://images.unsplash.com/photo-1582722872445-44dc1892fd0e?w=400&h=300&fit=crop" 
+                    <div class="out-of-stock-badge">OUT OF STOCK</div>
+                    <img src="https://emiratesbiofarm.com/cdn/shop/files/6-eggs-ebf.jpg?v=1699869876" 
                          alt="6 Pcs Pack Fresh Eggs" 
                          class="product-image" 
                          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                     <div class="product-icon" style="display: none;">🥚</div>
                     <div class="product-name">6 Pcs Pack</div>
                     <div class="product-price">GH₵ 15.00</div>
-                    <div class="quantity-control">
-                        <button class="qty-btn" onclick="changeQty('six', -1)" aria-label="Decrease quantity">−</button>
-                        <input type="number" class="qty-input" id="qty-six" value="0" min="0" step="1" oninput="validateQtyInput('six')" aria-label="Quantity">
-                        <button class="qty-btn" onclick="changeQty('six', 1)" aria-label="Increase quantity">+</button>
+                    <div class="quantity-control" style="opacity: 0.5; pointer-events: none;">
+                        <button class="qty-btn" onclick="changeQty('six', -1)" aria-label="Decrease quantity" disabled>−</button>
+                        <span class="qty-display" id="qty-six">0</span>
+                        <button class="qty-btn" onclick="changeQty('six', 1)" aria-label="Increase quantity" disabled>+</button>
                     </div>
                 </div>
 
                 <!-- 12 Pcs Pack -->
                 <div class="product" data-product="twelve" data-price="27" data-min="10">
                     <div class="min-order-badge">Min: 10</div>
-                    <img src="https://images.unsplash.com/photo-1516684732162-798a0062be99?w=400&h=300&fit=crop" 
+                    <img src="https://cdn.shopaccino.com/rootzorganics/products/rzchd0042-32-168132809714353_m.png?v=569" 
                          alt="12 Pcs Pack Fresh Eggs" 
                          class="product-image" 
                          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
@@ -73,32 +74,33 @@
                     <div class="product-price">GH₵ 27.00</div>
                     <div class="quantity-control">
                         <button class="qty-btn" onclick="changeQty('twelve', -1)" aria-label="Decrease quantity">−</button>
-                        <input type="number" class="qty-input" id="qty-twelve" value="0" min="0" step="1" oninput="validateQtyInput('twelve')" aria-label="Quantity">
+                        <span class="qty-display" id="qty-twelve">0</span>
                         <button class="qty-btn" onclick="changeQty('twelve', 1)" aria-label="Increase quantity">+</button>
                     </div>
                 </div>
 
                 <!-- 20 Pcs Pack -->
-                <div class="product" data-product="twenty" data-price="45" data-min="10">
+                <div class="product out-of-stock" data-product="twenty" data-price="45" data-min="10" data-available="false">
                     <div class="min-order-badge">Min: 10</div>
-                    <img src="https://images.unsplash.com/photo-1518569656558-1f25e69d93d7?w=400&h=300&fit=crop" 
+                    <div class="out-of-stock-badge">OUT OF STOCK</div>
+                    <img src="https://farmersbox.co.nz/cdn/shop/files/eggs_20ct_d3239505-fa1c-4f43-84b0-7bcdd014a958.jpg?v=1761601508" 
                          alt="20 Pcs Pack Fresh Eggs" 
                          class="product-image" 
                          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                     <div class="product-icon" style="display: none;">🥚🥚🥚</div>
                     <div class="product-name">20 Pcs Pack</div>
                     <div class="product-price">GH₵ 45.00</div>
-                    <div class="quantity-control">
-                        <button class="qty-btn" onclick="changeQty('twenty', -1)" aria-label="Decrease quantity">−</button>
-                        <input type="number" class="qty-input" id="qty-twenty" value="0" min="0" step="1" oninput="validateQtyInput('twenty')" aria-label="Quantity">
-                        <button class="qty-btn" onclick="changeQty('twenty', 1)" aria-label="Increase quantity">+</button>
+                    <div class="quantity-control" style="opacity: 0.5; pointer-events: none;">
+                        <button class="qty-btn" onclick="changeQty('twenty', -1)" aria-label="Decrease quantity" disabled>−</button>
+                        <span class="qty-display" id="qty-twenty">0</span>
+                        <button class="qty-btn" onclick="changeQty('twenty', 1)" aria-label="Increase quantity" disabled>+</button>
                     </div>
                 </div>
 
                 <!-- 30 Pcs Tray -->
                 <div class="product" data-product="medium" data-price="55" data-min="50">
                     <div class="min-order-badge">Min: 50</div>
-                    <img src="https://images.unsplash.com/photo-1569288063643-5d29ad64df09?w=400&h=300&fit=crop" 
+                    <img src="https://assets.hyperpure.com/data/images/products/772a4164c5362301d221a938855f4f5d.jpg" 
                          alt="30 Pcs Tray Fresh Eggs" 
                          class="product-image" 
                          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
@@ -107,7 +109,7 @@
                     <div class="product-price">GH₵ 55.00</div>
                     <div class="quantity-control">
                         <button class="qty-btn" onclick="changeQty('medium', -1)" aria-label="Decrease quantity">−</button>
-                        <input type="number" class="qty-input" id="qty-medium" value="0" min="0" step="1" oninput="validateQtyInput('medium')" aria-label="Quantity">
+                        <span class="qty-display" id="qty-medium">0</span>
                         <button class="qty-btn" onclick="changeQty('medium', 1)" aria-label="Increase quantity">+</button>
                     </div>
                 </div>
@@ -115,7 +117,7 @@
                 <!-- 30 Pcs Large Tray -->
                 <div class="product" data-product="large" data-price="65" data-min="50">
                     <div class="min-order-badge">Min: 50</div>
-                    <img src="https://images.unsplash.com/photo-1587486937773-b39d82483975?w=400&h=300&fit=crop" 
+                    <img src="https://assets.hyperpure.com/data/images/products/772a4164c5362301d221a938855f4f5d.jpg" 
                          alt="30 Pcs Large Tray Fresh Eggs" 
                          class="product-image" 
                          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
@@ -124,7 +126,7 @@
                     <div class="product-price">GH₵ 65.00</div>
                     <div class="quantity-control">
                         <button class="qty-btn" onclick="changeQty('large', -1)" aria-label="Decrease quantity">−</button>
-                        <input type="number" class="qty-input" id="qty-large" value="0" min="0" step="1" oninput="validateQtyInput('large')" aria-label="Quantity">
+                        <span class="qty-display" id="qty-large">0</span>
                         <button class="qty-btn" onclick="changeQty('large', 1)" aria-label="Increase quantity">+</button>
                     </div>
                 </div>
