@@ -192,6 +192,36 @@ h1 {
     text-align: center;
 }
 
+.qty-input {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #8B7355;
+    width: 70px;
+    text-align: center;
+    border: 2px solid #E8DCC4;
+    border-radius: 8px;
+    padding: 5px;
+    background: white;
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+.qty-input::-webkit-outer-spin-button,
+.qty-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.qty-input:focus {
+    outline: none;
+    border-color: #8B7355;
+}
+
+.qty-input.error {
+    border-color: #dc3545;
+    background: #fff5f5;
+}
+
 .form-group {
     margin-bottom: 20px;
 }

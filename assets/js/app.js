@@ -45,10 +45,61 @@ function changeQty(product, change) {
         }
     }
     
-    document.getElementById(`qty-${product}`).textContent = quantities[product];
+    const inputField = document.getElementById(`qty-${product}`);
+    inputField.value = quantities[product];
+    inputField.classList.remove('error');
     
     const productCard = document.querySelector(`[data-product="${product}"]`);
     if (quantities[product] > 0) {
+        productCard.classList.add('selected');
+    } else {
+        productCard.classList.remove('selected');
+    }
+    
+    updateSummary();
+}
+
+/**
+ * Validate quantity input when user types manually
+ * @param {string} product - Product identifier
+ */
+function validateQtyInput(product) {
+    const inputField = document.getElementById(`qty-${product}`);
+    const minOrder = minOrders[product];
+    
+    // Handle empty input
+    if (inputField.value === '' || inputField.value === null) {
+        inputField.value = 0;
+        quantities[product] = 0;
+        inputField.classList.remove('error');
+        inputField.title = '';
+        
+        const productCard = document.querySelector(`[data-product="${product}"]`);
+        productCard.classList.remove('selected');
+        updateSummary();
+        return;
+    }
+    
+    let value = parseInt(inputField.value) || 0;
+    
+    // Remove negative values
+    if (value < 0) {
+        value = 0;
+        inputField.value = 0;
+    }
+    
+    // Check if value is between 1 and minimum (invalid range)
+    if (value > 0 && value < minOrder) {
+        inputField.classList.add('error');
+        inputField.title = `Minimum order is ${minOrder} units`;
+    } else {
+        inputField.classList.remove('error');
+        inputField.title = '';
+        quantities[product] = value;
+    }
+    
+    const productCard = document.querySelector(`[data-product="${product}"]`);
+    if (value > 0) {
         productCard.classList.add('selected');
     } else {
         productCard.classList.remove('selected');
@@ -114,6 +165,24 @@ function initializeOrderForm() {
             }
             return;
         }
+        
+        // Validate quantities meet minimum requirements
+        let hasInvalidQty = false;
+        for (const product in quantities) {
+            const qty = quantities[product];
+            const minOrder = minOrders[product];
+            if (qty > 0 && qty < minOrder) {
+                hasInvalidQty = true;
+                const inputField = document.getElementById(`qty-${product}`);
+                inputField.classList.add('error');
+                inputField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+        
+        if (hasInvalidQty) {
+            alert('Some products do not meet minimum order quantities. Please check the highlighted items.');
+            return;
+        }
 
         // Get form values
         const name = document.getElementById('name').value.trim();
@@ -169,13 +238,25 @@ function initializeOrderForm() {
             // Encode message for URL
             const encodedMessage = encodeURIComponent(message);
             
-            // Open WhatsApp
+            // Open WhatsApp - use different method for mobile vs desktop
             const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
-            window.open(whatsappURL, '_blank');
             
-            // Reset button
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = '<span style="font-size: 1.5em;">📱</span> Send Order via WhatsApp';
+            // Detect if mobile device
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            
+            if (isMobile) {
+                // On mobile, redirect directly
+                window.location.href = whatsappURL;
+            } else {
+                // On desktop, open in new tab
+                window.open(whatsappURL, '_blank');
+                
+                // Reset button after short delay
+                setTimeout(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<span style="font-size: 1.5em;">📱</span> Send Order via WhatsApp';
+                }, 1000);
+            }
             
         } catch (error) {
             console.error('Error submitting order:', error);

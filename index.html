@@ -56,7 +56,7 @@
                     <div class="product-price">GH₵ 15.00</div>
                     <div class="quantity-control">
                         <button class="qty-btn" onclick="changeQty('six', -1)" aria-label="Decrease quantity">−</button>
-                        <span class="qty-display" id="qty-six">0</span>
+                        <input type="number" class="qty-input" id="qty-six" value="0" min="0" step="1" oninput="validateQtyInput('six')" aria-label="Quantity">
                         <button class="qty-btn" onclick="changeQty('six', 1)" aria-label="Increase quantity">+</button>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
                     <div class="product-price">GH₵ 27.00</div>
                     <div class="quantity-control">
                         <button class="qty-btn" onclick="changeQty('twelve', -1)" aria-label="Decrease quantity">−</button>
-                        <span class="qty-display" id="qty-twelve">0</span>
+                        <input type="number" class="qty-input" id="qty-twelve" value="0" min="0" step="1" oninput="validateQtyInput('twelve')" aria-label="Quantity">
                         <button class="qty-btn" onclick="changeQty('twelve', 1)" aria-label="Increase quantity">+</button>
                     </div>
                 </div>
@@ -90,7 +90,7 @@
                     <div class="product-price">GH₵ 45.00</div>
                     <div class="quantity-control">
                         <button class="qty-btn" onclick="changeQty('twenty', -1)" aria-label="Decrease quantity">−</button>
-                        <span class="qty-display" id="qty-twenty">0</span>
+                        <input type="number" class="qty-input" id="qty-twenty" value="0" min="0" step="1" oninput="validateQtyInput('twenty')" aria-label="Quantity">
                         <button class="qty-btn" onclick="changeQty('twenty', 1)" aria-label="Increase quantity">+</button>
                     </div>
                 </div>
@@ -107,7 +107,7 @@
                     <div class="product-price">GH₵ 55.00</div>
                     <div class="quantity-control">
                         <button class="qty-btn" onclick="changeQty('medium', -1)" aria-label="Decrease quantity">−</button>
-                        <span class="qty-display" id="qty-medium">0</span>
+                        <input type="number" class="qty-input" id="qty-medium" value="0" min="0" step="1" oninput="validateQtyInput('medium')" aria-label="Quantity">
                         <button class="qty-btn" onclick="changeQty('medium', 1)" aria-label="Increase quantity">+</button>
                     </div>
                 </div>
@@ -124,7 +124,7 @@
                     <div class="product-price">GH₵ 65.00</div>
                     <div class="quantity-control">
                         <button class="qty-btn" onclick="changeQty('large', -1)" aria-label="Decrease quantity">−</button>
-                        <span class="qty-display" id="qty-large">0</span>
+                        <input type="number" class="qty-input" id="qty-large" value="0" min="0" step="1" oninput="validateQtyInput('large')" aria-label="Quantity">
                         <button class="qty-btn" onclick="changeQty('large', 1)" aria-label="Increase quantity">+</button>
                     </div>
                 </div>
