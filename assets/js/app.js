@@ -1,6 +1,6 @@
 // Product data
 const quantities = { six: 0, twelve: 0, twenty: 0, medium: 0, large: 0 };
-const prices = { six: 15, twelve: 27, twenty: 45, medium: 18, large: 30 };
+const prices = { six: 15, twelve: 27, twenty: 45, medium: 55, large: 65 };
 const minOrders = { six: 10, twelve: 10, twenty: 10, medium: 50, large: 50 };
 const names = { 
     six: '6 Pcs Pack', 
