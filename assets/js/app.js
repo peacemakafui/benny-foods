@@ -17,7 +17,7 @@ const WHATSAPP_NUMBER = '233502095912';
 // IMPORTANT: REPLACE WITH YOUR GOOGLE reCAPTCHA v3 SITE KEY
 // Get your keys from: https://www.google.com/recaptcha/admin
 // The test key below works for localhost testing only
-const RECAPTCHA_SITE_KEY = '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI';
+const RECAPTCHA_SITE_KEY = '6LcAng0sAAAAAMNCvJd1UUV7F5yrsEa0MBMot_q7';
 
 /**
  * Change quantity for a product
