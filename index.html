@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fresh Farm Eggs from Wireku Asubonteng Farms - Wholesale bulk orders of quality eggs delivered fresh daily in Ghana">
+    <meta name="keywords" content="fresh eggs, farm eggs, wholesale eggs, Ghana eggs, bulk eggs, BennyFoods">
+    <meta name="author" content="BennyFoods">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="BennyFoods - Fresh Farm Eggs">
+    <meta property="og:description" content="Wholesale Farm Fresh Eggs - Bulk Orders Only. Sourced from Wireku Asubonteng Farms">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥚</text></svg>">
+    
+    <title>Fresh Farm Eggs - Order Now | BennyFoods</title>
+    
+    <!-- Google reCAPTCHA v3 -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" async defer></script>
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="business-name">BennyFoods</div>
+                <h1>🥚 Fresh Farm Eggs</h1>
+                <p class="farm-name">Sourced from Wireku Asubonteng Farms</p>
+                <p class="tagline">Wholesale Farm Fresh Eggs - Bulk Orders Only</p>
+            </div>
+        </header>
+
+        <div class="card">
+            <h2 style="color: #8B7355; margin-bottom: 20px;">Select Your Eggs (Wholesale Orders)</h2>
+            
+            <!-- Empty Order Warning -->
+            <div class="order-warning" id="emptyOrderWarning" style="display: none;">
+                <span style="font-size: 1.5em;">⚠️</span>
+                <span>Please select at least one item to continue with your order</span>
+            </div>
+            
+            <div class="product-grid">
+                <!-- 6 Pcs Pack -->
+                <div class="product" data-product="six" data-price="15" data-min="10">
+                    <div class="min-order-badge">Min: 10</div>
+                    <img src="https://images.unsplash.com/photo-1582722872445-44dc1892fd0e?w=400&h=300&fit=crop" 
+                         alt="6 Pcs Pack Fresh Eggs" 
+                         class="product-image" 
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="product-icon" style="display: none;">🥚</div>
+                    <div class="product-name">6 Pcs Pack</div>
+                    <div class="product-price">GH₵ 15.00</div>
+                    <div class="quantity-control">
+                        <button class="qty-btn" onclick="changeQty('six', -1)" aria-label="Decrease quantity">−</button>
+                        <span class="qty-display" id="qty-six">0</span>
+                        <button class="qty-btn" onclick="changeQty('six', 1)" aria-label="Increase quantity">+</button>
+                    </div>
+                </div>
+
+                <!-- 12 Pcs Pack -->
+                <div class="product" data-product="twelve" data-price="27" data-min="10">
+                    <div class="min-order-badge">Min: 10</div>
+                    <img src="https://images.unsplash.com/photo-1516684732162-798a0062be99?w=400&h=300&fit=crop" 
+                         alt="12 Pcs Pack Fresh Eggs" 
+                         class="product-image" 
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="product-icon" style="display: none;">🥚🥚</div>
+                    <div class="product-name">12 Pcs Pack</div>
+                    <div class="product-price">GH₵ 27.00</div>
+                    <div class="quantity-control">
+                        <button class="qty-btn" onclick="changeQty('twelve', -1)" aria-label="Decrease quantity">−</button>
+                        <span class="qty-display" id="qty-twelve">0</span>
+                        <button class="qty-btn" onclick="changeQty('twelve', 1)" aria-label="Increase quantity">+</button>
+                    </div>
+                </div>
+
+                <!-- 20 Pcs Pack -->
+                <div class="product" data-product="twenty" data-price="45" data-min="10">
+                    <div class="min-order-badge">Min: 10</div>
+                    <img src="https://images.unsplash.com/photo-1518569656558-1f25e69d93d7?w=400&h=300&fit=crop" 
+                         alt="20 Pcs Pack Fresh Eggs" 
+                         class="product-image" 
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="product-icon" style="display: none;">🥚🥚🥚</div>
+                    <div class="product-name">20 Pcs Pack</div>
+                    <div class="product-price">GH₵ 45.00</div>
+                    <div class="quantity-control">
+                        <button class="qty-btn" onclick="changeQty('twenty', -1)" aria-label="Decrease quantity">−</button>
+                        <span class="qty-display" id="qty-twenty">0</span>
+                        <button class="qty-btn" onclick="changeQty('twenty', 1)" aria-label="Increase quantity">+</button>
+                    </div>
+                </div>
+
+                <!-- 30 Pcs Tray -->
+                <div class="product" data-product="medium" data-price="18" data-min="50">
+                    <div class="min-order-badge">Min: 50</div>
+                    <img src="https://images.unsplash.com/photo-1569288063643-5d29ad64df09?w=400&h=300&fit=crop" 
+                         alt="30 Pcs Tray Fresh Eggs" 
+                         class="product-image" 
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="product-icon" style="display: none;">📦</div>
+                    <div class="product-name">30 Pcs Tray</div>
+                    <div class="product-price">GH₵ 18.00</div>
+                    <div class="quantity-control">
+                        <button class="qty-btn" onclick="changeQty('medium', -1)" aria-label="Decrease quantity">−</button>
+                        <span class="qty-display" id="qty-medium">0</span>
+                        <button class="qty-btn" onclick="changeQty('medium', 1)" aria-label="Increase quantity">+</button>
+                    </div>
+                </div>
+
+                <!-- 30 Pcs Large Tray -->
+                <div class="product" data-product="large" data-price="30" data-min="50">
+                    <div class="min-order-badge">Min: 50</div>
+                    <img src="https://images.unsplash.com/photo-1587486937773-b39d82483975?w=400&h=300&fit=crop" 
+                         alt="30 Pcs Large Tray Fresh Eggs" 
+                         class="product-image" 
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="product-icon" style="display: none;">📦📦</div>
+                    <div class="product-name">30 Pcs Large Tray</div>
+                    <div class="product-price">GH₵ 30.00</div>
+                    <div class="quantity-control">
+                        <button class="qty-btn" onclick="changeQty('large', -1)" aria-label="Decrease quantity">−</button>
+                        <span class="qty-display" id="qty-large">0</span>
+                        <button class="qty-btn" onclick="changeQty('large', 1)" aria-label="Increase quantity">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-summary" id="orderSummary" style="display: none;">
+                <h3 style="color: #8B7355; margin-bottom: 15px;">Order Summary</h3>
+                <div id="summaryItems"></div>
+                <hr style="margin: 15px 0; border-color: #E8DCC4;">
+                <div class="summary-item" style="font-size: 1.2em; font-weight: bold;">
+                    <span>Total:</span>
+                    <span id="totalPrice">GH₵ 0.00</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 style="color: #8B7355; margin-bottom: 20px;">Your Details</h2>
+            <form id="orderForm">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your name">
+                    <div class="error" id="nameError">Please enter your name</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="e.g., 0241234567">
+                    <div class="error" id="phoneError">Please enter a valid phone number</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Delivery Address *</label>
+                    <textarea id="address" name="address" required placeholder="Enter your delivery address"></textarea>
+                    <div class="error" id="addressError">Please enter your address</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="frequency">Delivery Frequency (Optional)</label>
+                    <select id="frequency" name="frequency">
+                        <option value="">Select delivery schedule...</option>
+                        <option value="One-time Order">One-time Order</option>
+                        <option value="Weekly Supply">Weekly Supply</option>
+                        <option value="Every Two Weeks">Every Two Weeks</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Additional Notes (Optional)</label>
+                    <textarea id="notes" name="notes" placeholder="Any special instructions?"></textarea>
+                </div>
+
+                <button type="submit" class="whatsapp-btn" id="submitBtn">
+                    <span style="font-size: 1.5em;">📱</span>
+                    Send Order via WhatsApp
+                </button>
+                
+                <div class="recaptcha-badge-note">
+                    🔒 This site is protected by reCAPTCHA to prevent spam. 
+                    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color: #7A9D54;">Privacy</a> • 
+                    <a href="https://policies.google.com/terms" target="_blank" rel="noopener" style="color: #7A9D54;">Terms</a>
+                </div>
+            </form>
+        </div>
+
+        <footer>
+            <div class="footer-section">
+                <div class="footer-title">📍 Farm Location</div>
+                <div class="footer-content">Asante Bekwai, Ghana</div>
+            </div>
+
+            <div class="footer-section">
+                <div class="footer-title">👨‍🌾 Farm Manager</div>
+                <div class="footer-content">
+                    <div class="contact-info">
+                        <div>Emmanuel Nyame</div>
+                        <div style="color: rgba(255,255,255,0.8);">📧 Email: </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <div class="footer-title">💼 Sales Manager</div>
+                <div class="footer-content">
+                    <div class="contact-info">
+                        <div>Benjamin Akwetey</div>
+                        <a href="tel:+233502095912" class="phone-link">📞 050 209 5912</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <div class="footer-title">🎥 Visit Our YouTube</div>
+                <a href="https://youtube.com/@wireakuasubontengfarms" target="_blank" rel="noopener noreferrer" class="youtube-link">
+                    <span style="font-size: 1.3em;">▶️</span>
+                    Watch Our Farm Videos
+                </a>
+            </div>
+
+            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.3); font-size: 0.9em; opacity: 0.8;">
+                © 2024 BennyFoods - Quality Eggs, Fresh Daily
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
